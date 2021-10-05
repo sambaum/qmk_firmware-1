@@ -31,3 +31,5 @@
 // For boards with RGBLIGHT_ENABLE (bm16)
 #define RGBLIGHT_LAYERS
 #define RGBLIGHT_SLEEP
+
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY

@@ -32,6 +32,20 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
 ////////////// Tapping Force Hold END //////////////
 
 
+////////////// Hold On Other Key Press BEGIN //////////////
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_TABFN, KC_TAB):
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}
+////////////// Hold On Other Key Press END //////////////
+
+
 ///////////////////// Macros BEGIN /////////////////////
 bool is_LALT_active = false;
 
