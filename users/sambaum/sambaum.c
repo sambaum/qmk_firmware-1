@@ -310,3 +310,12 @@ void matrix_scan_user(void) {
 //    rgb_matrix_set_suspend_state(false);
 //}
 ////////////// SUSPENDED STATE END ////////////////
+
+
+const key_override_t kc_4_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_4, KC_BSLS);
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+  &kc_4_key_override,
+  NULL // Null terminate the array of overrides!
+};
