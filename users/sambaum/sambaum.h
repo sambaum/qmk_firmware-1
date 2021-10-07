@@ -49,6 +49,7 @@ enum custom_keycodes {
 #define LT_Z LT(_BRACKETS, KC_Z)
 #define LT_W LT(_SPECCHAR, KC_W)
 #define AHKTYPE LCAG(KC_V)
+#define ALTNUBS RALT(KC_7)
 // Numpad
 #define DIVIDE LSFT(KC_7)
 #define MULPLY LSFT(KC_3)

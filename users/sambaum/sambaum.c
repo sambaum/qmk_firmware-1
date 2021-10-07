@@ -313,9 +313,12 @@ void matrix_scan_user(void) {
 
 
 const key_override_t kc_4_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_4, KC_BSLS);
+const key_override_t nubs_key_override = ko_make_basic(MOD_MASK_SHIFT, ALTNUBS, RALT(KC_NUBS));
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
   &kc_4_key_override,
+  &nubs_key_override,
   NULL // Null terminate the array of overrides!
 };
+
