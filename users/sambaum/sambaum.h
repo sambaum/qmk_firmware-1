@@ -27,8 +27,10 @@ enum custom_keycodes {
 #define _SPACEFN 1
 #define _SFN 1
 #define _TABFN 2
+#define _TFN 2
 #define _FN 3
 #define _NUMPAD 5
+#define _QFN 5
 #define _NUM 5
 #define _GAMING 6
 #define _BRACKETS 7
@@ -45,11 +47,12 @@ enum custom_keycodes {
 #define NEXTTAB LCTL(KC_PGDN) // Next tab
 #define COLON LSFT(KC_DOT)
 #define LOCK LGUI(KC_L) // Lock PC
-#define LT_Q LT(_NUMPAD, KC_Q)
+#define LT_Q LT(_QFN, KC_Q)
 #define LT_Z LT(_BRACKETS, KC_Z)
 #define LT_W LT(_SPECCHAR, KC_W)
 #define AHKTYPE LCAG(KC_V)
 #define ALTNUBS RALT(KC_7)
+#define LT_RBRC LT(_BRACKETS, KC_RBRC)
 // Numpad
 #define DIVIDE LSFT(KC_7)
 #define MULPLY LSFT(KC_3)
