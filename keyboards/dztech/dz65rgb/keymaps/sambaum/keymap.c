@@ -81,8 +81,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { 58, 59, 60, NO_LED, NO_LED, 61, NO_LED, NO_LED, 62, 63, 64, 65, NO_LED, 66, 67 }
 */
 
+
 int LED_RIGHT_SIDE[] = {6, 7, 8, 9, 10, 11, 12, 13, 14, 21, 22, 23, 24, 25, 26, 27, 28, 29, 36, 37, 38, 39, 40, 41, 42, 43, 50, 51, 52, 53, 54, 55, 56, 57, 62, 63, 64, 65, 66, 67};
 int LED_RIGHT_SIDE_SIZE = *(&LED_RIGHT_SIDE + 1) - LED_RIGHT_SIDE;
+
+int LED_LEFT_SIDE[] = {0, 1, 2, 3, 4, 5, 6, 15, 16, 17, 18, 19, 20, 21, 30, 31, 32, 33, 34, 35, 36, 44, 45, 46, 47, 48, 49, 50, 58, 59, 60};
+int LED_LEFT_SIDE_SIZE = *(&LED_LEFT_SIDE + 1) - LED_LEFT_SIDE;
 
 int LED_DIVIDER[] = {6, 21, 36, 50};
 int LED_DIVIDER_SIZE = *(&LED_DIVIDER + 1) - LED_DIVIDER;
@@ -117,7 +121,7 @@ void rgb_matrix_indicators_kb(void) {
         loop_rgb_matrix_set_color(LED_DIVIDER, LED_DIVIDER_SIZE, RGB_BLUE);
         break;
       case _BRACKETS:
-        loop_rgb_matrix_set_color(LED_RIGHT_SIDE, LED_RIGHT_SIDE_SIZE, RGB_YELLOW);
+        loop_rgb_matrix_set_color(LED_LEFT_SIDE, LED_LEFT_SIDE_SIZE, RGB_YELLOW);
         loop_rgb_matrix_set_color(LED_DIVIDER, LED_DIVIDER_SIZE, RGB_RED);
         break;
       case _GAMING:
@@ -128,8 +132,8 @@ void rgb_matrix_indicators_kb(void) {
         loop_rgb_matrix_set_color(LED_ALPHANUM, LED_ALPHANUM_SIZE, RGB_RED);
         break;
       case _TABFN:
-        // all LEDs blue
-        loop_rgb_matrix_set_color(LED_ALPHANUM, LED_ALPHANUM_SIZE, RGB_BLUE);
+        loop_rgb_matrix_set_color(LED_RIGHT_SIDE, LED_RIGHT_SIDE_SIZE, RGB_CYAN);
+        loop_rgb_matrix_set_color(LED_DIVIDER, LED_DIVIDER_SIZE, RGB_BLUE);
         break;
       default:
         if (led_state.caps_lock) {
