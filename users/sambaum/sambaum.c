@@ -59,6 +59,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
 
+  // Shift+4=$
   case MA_4:
     if (record->event.pressed) {
       // when keycode is pressed
@@ -80,6 +81,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  // remove dead key for ^ and ~
 	case MA_EQL:
 	  if (record->event.pressed) {
 		// when keycode is pressed
@@ -97,6 +99,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	}
 	break;
 
+  // remove dead key for ´
 	case MA_MINS:
 	  if (record->event.pressed) {
 		// when keycode is pressed
@@ -127,6 +130,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  // Use ANSI |\ key on CH
   case MA_BSLS:
     if (record->event.pressed) {
       // when keycode is pressed
@@ -240,6 +244,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  // Alt-Tab for RDP
    case ALTPGUP:
      if (record->event.pressed) {
        is_LALT_active = true;
@@ -251,6 +256,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      break;
 
+  // Alt-Tab for RDP
    case ALTPGDN:
      if (record->event.pressed) {
        is_LALT_active = true;
@@ -262,6 +268,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      break;
 
+  // Space-FN Alt-Tab
    case ALTTAB:
      if (record->event.pressed) {
        is_LALT_active = true;
