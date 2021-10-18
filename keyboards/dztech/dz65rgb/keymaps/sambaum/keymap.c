@@ -112,9 +112,14 @@ void rgb_matrix_indicators_kb(void) {
         rgb_matrix_set_color(0, RGB_RED); // reset
         rgb_matrix_set_color(63, RGB_RED); // fn
         break;
-      case _NUMPAD:
-        loop_rgb_matrix_set_color(LED_RIGHT_SIDE, LED_RIGHT_SIDE_SIZE, RGB_CYAN);
-        loop_rgb_matrix_set_color(LED_DIVIDER, LED_DIVIDER_SIZE, RGB_BLUE);
+      case _QFN:
+        rgb_matrix_set_color(22, RGB_CYAN);
+        rgb_matrix_set_color(23, RGB_CYAN);
+        rgb_matrix_set_color(24, RGB_CYAN);
+        rgb_matrix_set_color(25, RGB_CYAN);
+        rgb_matrix_set_color(37, RGB_CYAN);
+        rgb_matrix_set_color(38, RGB_CYAN);
+        rgb_matrix_set_color(39, RGB_CYAN);
         break;
       case _SPECCHAR:
         loop_rgb_matrix_set_color(LED_RIGHT_SIDE, LED_RIGHT_SIDE_SIZE, RGB_MAGENTA);

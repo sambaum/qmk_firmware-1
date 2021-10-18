@@ -27,6 +27,7 @@
 
 // Required for ATEN macro and RDP
 #define TAP_CODE_DELAY 30
+// In the keyboard section, change the drop down to "On this Computer"
 
 // For boards with RGBLIGHT_ENABLE (bm16)
 #define RGBLIGHT_LAYERS
