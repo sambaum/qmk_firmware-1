@@ -7,8 +7,7 @@
 // Custom keycodes (for macros)
 enum custom_keycodes {
     ATEN = SAFE_RANGE,
-    DOLLAR,
-    MA_4,
+    MA_4, // DEPRECATED
     MA_ENT, // used for } on ANSI board
     MA_BSLS,
     MA_EQL,
@@ -29,9 +28,7 @@ enum custom_keycodes {
 #define _TABFN 2
 #define _TFN 2
 #define _FN 3
-#define _NUMPAD 5
 #define _QFN 5
-#define _NUM 5
 #define _GAMING 6
 #define _BRACKETS 7
 #define _SPECCHAR 8
@@ -48,8 +45,6 @@ enum custom_keycodes {
 #define COLON LSFT(KC_DOT)
 #define LOCK LGUI(KC_L) // Lock PC
 #define LT_Q LT(_QFN, KC_Q)
-#define LT_Z LT(_BRACKETS, KC_Z)
-#define LT_W LT(_SPECCHAR, KC_W)
 #define AHKTYPE LCAG(KC_V)
 #define ALTNUBS RALT(KC_7)
 #define LT_RBRC LT(_BRACKETS, KC_RBRC)
