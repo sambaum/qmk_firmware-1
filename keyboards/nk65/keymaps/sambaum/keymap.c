@@ -7,27 +7,27 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_65_ansi(
-        KC_GESC,             KC_1,    KC_2,     KC_3,    MA_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    MA_MINS, MA_EQL,  KC_BSPC, KC_DEL,
-        LT(_TABFN, KC_TAB),  LT_Q,    LT_W,     KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    MA_LBRC, KC_RBRC, MA_BSLS, KC_PSCR,
+        KC_GESC,             KC_1,    KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    MA_MINS, MA_EQL,  KC_BSPC, KC_DEL,
+        LT(_TABFN, KC_TAB),  LT_Q,    KC_W,     KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    MA_LBRC, LT_RBRC, MA_BSLS, KC_PSCR,
         KC_LCTL,             KC_A,    KC_S,     KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    MA_SCLN, MA_QUOT,          KC_ENT,  KC_PGUP,
-        KC_LSFT,             LT_Z,    KC_X,     KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   KC_PGDN,
+        KC_LSFT,                      KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   KC_PGDN,
         LCTL_T(KC_CAPS),     KC_LGUI, KC_LALT,                             LT(_SPACEFN, KC_SPC),      KC_RALT, MO(_FN), MO(_SFN),KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
     [_SPACEFN] = LAYOUT_65_ansi(
         _______,             KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 , _______, KC_MUTE,
-        ALTTAB,              LCA_PAU, _______,  ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_NUM),KC_INS,
+        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_TFN),KC_INS,
         _______,             _______, PREVTAB,  ALTPGDN, NEXTTAB, _______, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, KC_QUOT,          _______, KC_END,
         _______,                      _______,  _______, _______, CLIPT,   KC_SPC,  KC_PGDN, KC_BTN3, _______, _______, _______, _______, KC_VOLU, KC_HOME,
         _______,             _______, _______,                             _______,                   _______, _______, _______, _______, KC_VOLD, KC_MPLY
     ),
 
     [_TABFN] = LAYOUT_65_ansi(
-        LOCK,                LGUI1,   LGUI2,    LGUI3,   LGUI4,   LGUI5,   LGUI6,   LGUI7,   LGUI8,   LGUI9,   _______, _______, _______, _______, _______,
-        _______,             KC_CAPS, _______,  _______, _______, _______, _______, EN_U,    KC_UP  , EN_O,    EN_P,    _______, _______, _______, _______,
-        _______,             _______, KC_SLEP,  _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,          _______, _______,
-        _______,                      _______,  _______, _______, AHKTYPE, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______,             _______, _______,                             _______,                   _______, _______, _______, _______, _______, _______
+        TG(_TFN),            LGUI1,   LGUI2,    LGUI3,   LGUI4,   LGUI5,   LGUI6,   LGUI7,   LGUI8,   LGUI9,   XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,
+        _______,             MO(_SCR),XXXXXXX,  KC_ENT,  XXXXXXX, XXXXXXX, DIVIDE,  KC_7,    KC_8,    KC_9,    MINUS,   XXXXXXX, XXXXXXX, TG(_TFN),_______,
+        _______,             XXXXXXX, KC_SLEP,  XXXXXXX, XXXXXXX, XXXXXXX, MULPLY,  KC_4,    KC_5,    KC_6,    PLUS,    COLON,            _______, _______,
+        _______,                      XXXXXXX,  XXXXXXX, XXXXXXX, AHKTYPE, XXXXXXX, KC_SPC,  KC_1,    KC_2,    KC_3,    KC_DOT,  _______, _______, _______,
+        _______,             _______, _______,                             KC_0,                      _______, _______, _______, _______, _______, _______
     ),
 
     [_FN] = LAYOUT_65_ansi(
@@ -38,12 +38,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,             _______, _______,                             _______,                   _______, _______, _______, _______, _______, _______
     ),
 
-    [_NUMPAD] = LAYOUT_65_ansi(
-        TG(_NUM),            XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,
-        _______,             XXXXXXX, MO(_SCR), XXXXXXX, XXXXXXX, XXXXXXX, DIVIDE,  KC_7,    KC_8,    KC_9,    MINUS,   XXXXXXX, XXXXXXX, TG(_NUM),_______,
-        _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, MULPLY,  KC_4,    KC_5,    KC_6,    PLUS,    COLON,            _______, _______,
-        _______,                      XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SPC,  KC_1,    KC_2,    KC_3,    KC_DOT,  _______, _______, _______,
-        _______,             _______, _______,                             KC_0,                      _______, _______, _______, _______, _______, _______
+    [_QFN] = LAYOUT_65_ansi(
+        _______,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______,             _______, VDNEW,    VDLEFT,  VDRGHT,  VDREM,   _______, EN_U,    KC_UP  , EN_O,    EN_P,    _______, _______, _______, _______,
+        _______,             _______, _______,  _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,          _______, _______,
+        _______,                      _______,  _______, CS_C,    CS_V,    _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______,             _______, _______,                             _______,                   _______, _______, _______, _______, _______, _______
     ),
 
     [_SPECCHAR] = LAYOUT_65_ansi(
@@ -56,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BRACKETS] = LAYOUT_65_ansi(
         _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,
-        _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LSBR,    RSBR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-        _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LCBR,    RCBR,    XXXXXXX, XXXXXXX, XXXXXXX,          _______, _______,
-        _______,                      XXXXXXX,  VDNEW,   VDLEFT,  VDRGHT,  VDREM,   XXXXXXX, LABK,    RABK,    XXXXXXX, XXXXXXX, _______, _______, _______,
+        _______,             XXXXXXX, XXXXXXX,  LSBR,    RSBR,    XXXXXXX, XXXXXXX, LSBR,    RSBR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+        _______,             XXXXXXX, XXXXXXX,  LCBR,    RCBR,    XXXXXXX, XXXXXXX, LCBR,    RCBR,    XXXXXXX, XXXXXXX, XXXXXXX,          _______, _______,
+        _______,                      XXXXXXX,  XXXXXXX, LABK,    RABK,    XXXXXXX, XXXXXXX, LABK,    RABK,    XXXXXXX, XXXXXXX, _______, _______, _______,
         _______,             _______, _______,                             XXXXXXX,                   _______, _______, _______, _______, _______, _______
     ),
 
@@ -71,6 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 
 };
+
 
 ///////////////////// LED BEGIN /////////////////////
 /*
