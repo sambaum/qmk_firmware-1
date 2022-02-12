@@ -5,4 +5,6 @@ KEY_OVERRIDE_ENABLE = yes
 
 ifeq ($(strip $(MCU)), atmega32u4)
   LTO_ENABLE = yes
+  SPACE_CADET_ENABLE = no
+  MAGIC_ENABLE = no
 endif
