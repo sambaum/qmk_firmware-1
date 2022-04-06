@@ -24,6 +24,7 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case RSFT_T(KC_SLSH):
         case LT(_SPACEFN, KC_SPC):
+        case LT(_TABFN, KC_TAB):
             return true;
         default:
             return false;
