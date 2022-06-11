@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "sambaum.h"
-#include "keymap_german_ch.h"
-#include "sendstring_german_ch.h"
+#include "keymap_swiss_de.h"
+#include "sendstring_swiss_de.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_65_ansi(
