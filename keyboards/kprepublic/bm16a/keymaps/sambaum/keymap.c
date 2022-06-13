@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(_BASE),     TO(_BLENDER),   TO(_FN2),       TO(_FN3),      \
     _______,       _______,        _______,        _______,       \
     _______,       _______,        _______,        _______,       \
-    KC_TRNS,       _______,        _______,        RESET          \
+    KC_TRNS,       _______,        _______,        QK_BOOT        \
   )
 
 };
