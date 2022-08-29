@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SPACEFN] = LAYOUT_65_ansi(
         _______,             KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 , _______, KC_MUTE,
-        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_TFN),KC_INS,
+        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_NUM),KC_INS,
         KC_RCTL,             CAPSWRD, PREVTAB,  ALTPGDN, NEXTTAB, _______, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, KC_QUOT,          _______, KC_END,
         _______,                      _______,  _______, _______, CLIPT,   KC_SPC,  KC_PGDN, KC_BTN3, _______, _______, _______, _______, KC_VOLU, KC_HOME,
         _______,             _______, _______,                             _______,                   _______, _______, _______, _______, KC_VOLD, KC_MPLY
@@ -68,6 +68,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,             KC_A,    _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______,
         KC_LSFT,                      _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,             _______, _______,                             _______,                   _______, _______, _______, _______, _______, _______
+    ),
+
+    [_NUMPAD] = LAYOUT_65_ansi(
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, KC_BSPC, KC_DEL,
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, DIVIDE,  KC_7,    KC_8,    KC_9,    MINUS,   IIIIIII, IIIIIII, IIIIIII, IIIIIII,
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, MULPLY,  KC_4,    KC_5,    KC_6,    PLUS,    COLON,            KC_ENT,  IIIIIII,
+        IIIIIII,                      IIIIIII,  IIIIIII, IIIIIII, IIIIIII, IIIIIII, KC_SPC,  KC_1,    KC_2,    KC_3,    KC_DOT,  IIIIIII, IIIIIII, IIIIIII,
+        IIIIIII,             IIIIIII, IIIIIII,                             KC_0,                      IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII
     )
 
 };
