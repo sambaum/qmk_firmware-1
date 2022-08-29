@@ -18,6 +18,7 @@ enum custom_keycodes {
     ALTPGUP,
     ALTPGDN,
     ALTTAB,
+    IIIIIII, // Numpad return
     NEW_SAFE_RANGE  //use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
@@ -33,6 +34,8 @@ enum custom_keycodes {
 #define _BRACKETS 7
 #define _SPECCHAR 8
 #define _SCR 8
+#define _NUMPAD 9
+#define _NUM 9
 
 // Aliases
 #define EN_U S(C(KC_U)) // Enpass copy user

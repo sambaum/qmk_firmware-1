@@ -280,9 +280,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      break;
 
+  // Return to base layer
+   case IIIIIII:
+     if (record->event.pressed) {
+       // when keycode is pressed
+       layer_move(_BASE);
+     } else {
+       // when keycode is released
+     }
+     break;
+
    default:
      return true;
-  }
+   }
   return true;
 };
 
