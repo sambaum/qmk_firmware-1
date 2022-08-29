@@ -40,6 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(_FN4),      KC_VOLD,        KC_MUTE,        KC_MNXT        \
   ),
 
+// I=Trim Left, O=Trim Right, K=Cut, G=Grab, SFT+B=Select/Zoom, SFT+S=Snaps Strips to the current frame
   [_BLENDER] = LAYOUT_ortho_4x4(
     KC_ESC,        KC_S,           KC_HOME,        KC_DEL,        \
     KC_LCTL,       KC_I,           KC_O,           KC_K,          \
@@ -47,6 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,       _______,        MO(_BLENDER2),  KC_SPC         \
   ),
 
+// ALT+2/3/4=Speed up, CTL+ALT+P=Setting the preview range, SFT+ALT+T=Trim in all channels and remove gaps
   [_BLENDER2] = LAYOUT_ortho_4x4(
     _______,       A(KC_2),        A(KC_3),        A(KC_4),       \
     KC_A,          C(A(KC_P)),     S(C(KC_G)),     S(A(KC_T)),    \
