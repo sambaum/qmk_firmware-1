@@ -269,6 +269,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      break;
 
+  // LCTL(KC_PGUP) for RDP - Previous tab
+   case PREVTAB:
+     if (record->event.pressed) {
+       register_code(KC_LCTL);
+       SEND_STRING(SS_DELAY(50)); //RDP
+       tap_code(KC_PGUP);
+     } else {
+       unregister_code(KC_LCTL);
+     }
+     break;
+
+  // LCTL(KC_PGDN) for RDP - Next tab
+   case NEXTTAB:
+     if (record->event.pressed) {
+       register_code(KC_LCTL);
+       SEND_STRING(SS_DELAY(50)); //RDP
+       tap_code(KC_PGDN);
+     } else {
+       unregister_code(KC_LCTL);
+     }
+     break;
+
   // Space-FN Alt-Tab
    case ALTTAB:
      if (record->event.pressed) {

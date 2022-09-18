@@ -26,6 +26,8 @@
 #define TAPPING_FORCE_HOLD_PER_KEY
 
 // Required for ATEN macro and RDP
+// Sets the delay between register_code and unregister_code, if you're having issues with it registering properly (common on VUSB boards).
+// The value is in milliseconds.
 #define TAP_CODE_DELAY 30
 // In the keyboard section, change the drop down to "On this Computer"
 

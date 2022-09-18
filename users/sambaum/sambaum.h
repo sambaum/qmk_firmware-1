@@ -19,6 +19,8 @@ enum custom_keycodes {
     ALTPGDN,
     ALTTAB,
     IIIIIII, // Numpad return
+    NEXTTAB, // LCTL(KC_PGUP) for RDP - Previous tab
+    PREVTAB, // LCTL(KC_PGDN) for RDP - Next tab
     NEW_SAFE_RANGE  //use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
@@ -43,8 +45,8 @@ enum custom_keycodes {
 #define EN_P S(C(KC_P)) // Enpass copy password
 #define CLIPT LCA(KC_V) // Left Control + Alt + V (Clipboard manager paste by typing)
 #define LCA_PAU LCA(KC_PAUS) // Toggle fullscreen in RDP sessions
-#define PREVTAB LCTL(KC_PGUP) // Previous tab
-#define NEXTTAB LCTL(KC_PGDN) // Next tab
+// #define PREVTAB LCTL(KC_PGUP) // Previous tab
+// #define NEXTTAB LCTL(KC_PGDN) // Next tab
 #define COLON LSFT(KC_DOT)
 #define LOCK LGUI(KC_L) // Lock PC
 #define LT_Q LT(_QFN, KC_Q)
