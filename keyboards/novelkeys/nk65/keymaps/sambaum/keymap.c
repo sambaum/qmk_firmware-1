@@ -1,0 +1,96 @@
+#include QMK_KEYBOARD_H
+#include "sambaum.h"
+#include "keymap_swiss_de.h"
+#include "sendstring_swiss_de.h"
+
+#include "drivers/led/issi/is31fl3733.h"
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_BASE] = LAYOUT_65_ansi(
+        QK_GESC,             KC_1,    KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    MA_MINS, MA_EQL,  KC_BSPC, KC_DEL,
+        LT(_TABFN, KC_TAB),  LT_Q,    KC_W,     KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    MA_LBRC, LT_RBRC, MA_BSLS, KC_PSCR,
+        KC_LCTL,             KC_A,    KC_S,     KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    MA_SCLN, MA_QUOT,          KC_ENT,  KC_PGUP,
+        KC_LSFT,                      KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP,   KC_PGDN,
+        LCTL_T(KC_CAPS),     KC_LGUI, KC_LALT,                             LT(_SPACEFN, KC_SPC),      KC_RALT, MO(_FN), MO(_SFN),KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+
+    [_SPACEFN] = LAYOUT_65_ansi(
+        _______,             KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 , _______, KC_MUTE,
+        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_NUM),KC_INS,
+        KC_RCTL,             CAPSWRD, PREVTAB,  ALTPGDN, NEXTTAB, _______, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, KC_QUOT,          _______, KC_END,
+        _______,                      _______,  _______, _______, CLIPT,   KC_SPC,  KC_PGDN, KC_BTN3, _______, _______, _______, _______, KC_VOLU, KC_HOME,
+        _______,             _______, _______,                             _______,                   _______, _______, _______, _______, KC_VOLD, KC_MPLY
+    ),
+
+    [_TABFN] = LAYOUT_65_ansi(
+        TG(_TFN),            LGUI1,   LGUI2,    LGUI3,   LGUI4,   LGUI5,   LGUI6,   LGUI7,   LGUI8,   LGUI9,   KC_NUM,  XXXXXXX, XXXXXXX, _______, _______,
+        _______,             MO(_SCR),XXXXXXX,  KC_ENT,  XXXXXXX, XXXXXXX, DIVIDE,  KC_7,    KC_8,    KC_9,    MINUS,   XXXXXXX, XXXXXXX, TG(_TFN),_______,
+        _______,             XXXXXXX, KC_SLEP,  XXXXXXX, XXXXXXX, XXXXXXX, MULPLY,  KC_4,    KC_5,    KC_6,    PLUS,    COLON,            _______, _______,
+        _______,                      XXXXXXX,  XXXXXXX, XXXXXXX, AHKTYPE, XXXXXXX, KC_SPC,  KC_1,    KC_2,    KC_3,    KC_DOT,  _______, _______, _______,
+        _______,             _______, _______,                             KC_0,                      _______, _______, _______, _______, _______, _______
+    ),
+
+    [_FN] = LAYOUT_65_ansi(
+        QK_BOOT,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LSCR,
+        _______,             _______, EF_INC,   H1_INC,  BR_INC,  S1_INC,  S2_INC,  H2_INC,  ES_INC,  _______, _______, _______, _______, _______, KC_LNUM,
+        _______,             _______, EF_DEC,   H1_DEC,  BR_DEC,  S1_DEC,  S2_DEC,  H2_DEC,  ES_DEC,  _______, _______, _______,          _______, KC_PAUS,
+        _______,                      _______,  _______, _______, _______, _______, NK_TOGG, _______, _______,  ATEN,   _______, _______, _______, TG(_GAMING),
+        _______,             GUI_TOG, _______,                             _______,                   _______, _______, _______, _______, _______, _______
+    ),
+
+    [_QFN] = LAYOUT_65_ansi(
+        _______,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______,             _______, VDNEW,    VDLEFT,  VDRGHT,  VDREM,   _______, EN_U,    KC_UP  , EN_O,    EN_P,    _______, _______, _______, _______,
+        _______,             _______, _______,  _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,          _______, _______,
+        _______,                      _______,  _______, CS_C,    CS_V,    _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______,             _______, _______,                             _______,                   _______, _______, _______, _______, _______, _______
+    ),
+
+    [_SPECCHAR] = LAYOUT_65_ansi(
+        TG(_QFN),            XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,
+        _______,             XXXXXXX, _______,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_7), S(KC_8), S(KC_9), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+        _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_4), S(KC_5), S(KC_6), XXXXXXX, XXXXXXX,          _______, _______,
+        _______,                      XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_1), S(KC_2), S(KC_3), XXXXXXX, _______, _______, _______,
+        _______,             _______, XXXXXXX,                             S(KC_0),                   _______, _______, _______, _______, _______, _______
+    ),
+
+    [_BRACKETS] = LAYOUT_65_ansi(
+        _______,             XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______,
+        _______,             XXXXXXX, XXXXXXX,  LSBR,    RSBR,    XXXXXXX, XXXXXXX, LSBR,    RSBR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+        _______,             XXXXXXX, XXXXXXX,  LCBR,    RCBR,    XXXXXXX, XXXXXXX, LCBR,    RCBR,    XXXXXXX, XXXXXXX, XXXXXXX,          _______, _______,
+        _______,                      XXXXXXX,  XXXXXXX, LABK,    RABK,    XXXXXXX, XXXXXXX, LABK,    RABK,    XXXXXXX, XXXXXXX, _______, _______, _______,
+        _______,             _______, _______,                             XXXXXXX,                   _______, _______, _______, _______, _______, _______
+    ),
+
+    [_GAMING] = LAYOUT_65_ansi(
+        _______,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, KC_MINS, KC_EQL,  _______, _______,
+        KC_TAB,              KC_Q,    _______,  _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, _______, KC_BSLS, _______,
+        KC_CAPS,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, KC_SCLN, KC_QUOT,          _______, _______,
+        _______,                      _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        KC_LCTL,             _______, _______,                             KC_SPC,                    _______, _______, _______, _______, _______, _______
+    ),
+
+    [_NUMPAD] = LAYOUT_65_ansi(
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, KC_BSPC, KC_DEL,
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, DIVIDE,  KC_7,    KC_8,    KC_9,    MINUS,   IIIIIII, IIIIIII, IIIIIII, IIIIIII,
+        IIIIIII,             IIIIIII, IIIIIII,  IIIIIII, IIIIIII, IIIIIII, MULPLY,  KC_4,    KC_5,    KC_6,    PLUS,    COLON,            KC_ENT,  IIIIIII,
+        IIIIIII,                      IIIIIII,  IIIIIII, IIIIIII, IIIIIII, IIIIIII, KC_SPC,  KC_1,    KC_2,    KC_3,    KC_DOT,  IIIIIII, IIIIIII, IIIIIII,
+        IIIIIII,             IIIIIII, IIIIIII,                             KC_0,                      IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII, IIIIIII
+    )
+
+};
+
+
+///////////////////// LED BEGIN /////////////////////
+/*
+    {  1-1,  5-1,  9-1, 13-1, 17-1, 21-1, 25-1, 29-1, 33-1, 37-1, 41-1, 45-1, 49-1, 53-1, 1+64-1 },
+    {  2-1,  6-1, 10-1, 14-1, 18-1, 22-1, 26-1, 30-1, 34-1, 38-1, 42-1, 46-1, 50-1,  255, 2+64-1 },
+    {  3-1,  7-1, 11-1, 15-1, 19-1, 23-1, 27-1, 31-1, 35-1, 39-1, 43-1, 47-1, 54-1, 55-1, 5+64-1 },
+    {  4-1,  255,  8-1, 12-1, 16-1, 20-1, 24-1, 28-1, 32-1, 36-1, 40-1, 44-1, 51-1, 52-1, 3+64-1 },
+    { 57-1, 58-1, 59-1,  255,  255,  255, 60-1,  255,  255, 48-1, 62-1, 63-1, 64-1, 56-1, 4+64-1 }
+*/
+
+
+
+///////////////////// LED END /////////////////////
+
