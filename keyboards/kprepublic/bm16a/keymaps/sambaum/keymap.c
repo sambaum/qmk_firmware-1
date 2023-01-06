@@ -34,8 +34,8 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_ortho_4x4(
-    KC_PGUP,       KC_HOME,        KC_UP,          KC_END ,       \
-    KC_PGDN,       KC_LEFT,        KC_DOWN,        KC_RGHT,       \
+    _______,       _______,        _______,        _______ ,       \
+    _______,       _______,        _______,        _______,       \
     _______,       KC_VOLU,        KC_MPLY,        KC_MPRV,       \
     MO(_FN4),      KC_VOLD,        KC_MUTE,        KC_MNXT        \
   ),
