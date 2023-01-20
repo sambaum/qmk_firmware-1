@@ -234,6 +234,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  // Mouse middle button with delay for RDP
+  case MA_BTN3:
+    if (record->event.pressed) {
+      // when keycode is pressed
+      register_code(KC_BTN3);
+      wait_ms(50); //RDP
+    } else {
+      // when keycode is released
+      unregister_code(KC_BTN3);
+    }
+    break;
+
   case ATEN:
     if (record->event.pressed) {
       // when keycode is pressed

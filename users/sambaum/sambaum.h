@@ -15,6 +15,7 @@ enum custom_keycodes {
     MA_SCLN, // ö
     MA_QUOT, // ä
     MA_LBRC, // ü
+    MA_BTN3, // RDP
     ALTPGUP,
     ALTPGDN,
     ALTTAB,
