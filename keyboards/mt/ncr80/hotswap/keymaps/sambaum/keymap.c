@@ -18,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SPACEFN] = LAYOUT(
         _______,             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______,             KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,  KC_INS, _______, _______,
-        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, KC_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_NUM),_______, _______, _______,
+        ALTTAB,              LCA_PAU, ALTTAB,   ALTPGUP, MA_BTN2, _______, _______, KC_HOME, KC_UP  , KC_END , _______, KC_LBRC, _______, TG(_NUM),_______, _______, _______,
         KC_RCTL,             CAPSWRD, PREVTAB,  ALTPGDN, NEXTTAB, _______, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_SCLN, KC_QUOT,          _______,
-        _______,                      _______,  _______, _______, CLIPT,   KC_SPC,  KC_PGDN, KC_BTN3, _______, _______, _______, _______,                   KC_VOLU,
+        _______,                      _______,  _______, _______, CLIPT,   KC_SPC,  KC_PGDN, MA_BTN3, _______, _______, _______, _______,                   KC_VOLU,
         _______,                      _______,                             _______,                   _______, _______,                            _______, KC_VOLD, KC_MPLY
     ),
 
