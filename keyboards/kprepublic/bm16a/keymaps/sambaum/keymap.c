@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS,       _______,        MO(_BLENDER2),  KC_SPC         \
   ),
 
-// ALT+2/3/4=Speed up, CTL+ALT+P=Setting the preview range, SFT+ALT+T=Trim in all channels and remove gaps
+// ALT+2/3/4=Speed up, CTL+ALT+P=Setting the preview range automatically, SFT+ALT+T=Trim in all channels and remove gaps
   [_BLENDER2] = LAYOUT_ortho_4x4(
     _______,       A(KC_2),        A(KC_3),        A(KC_4),       \
     KC_A,          C(A(KC_P)),     S(C(KC_G)),     S(A(KC_T)),    \
