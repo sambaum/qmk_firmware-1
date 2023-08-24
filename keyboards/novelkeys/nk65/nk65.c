@@ -33,6 +33,10 @@ void led_update_ports(led_t led_state) {
     }
 }
 
+/* Layer 1: Magenta Middle LED
+ * Layer 2: Red Bottom LED
+ * Layer 6: Red Middle and Bottom LED
+ */
 __attribute__((weak)) layer_state_t layer_state_set_user(layer_state_t state) {
     uint8_t R = 0;
     uint8_t G = 0;
