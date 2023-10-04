@@ -25,6 +25,7 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
         case RSFT_T(KC_SLSH):
         case LT(_SPACEFN, KC_SPC):
         case LT(_TABFN, KC_TAB):
+        case LT(_SFN, KC_CAPS):
             return true;
         default:
             return false;
@@ -38,6 +39,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_TABFN, KC_TAB):
         case LT_RBRC:
+        case LT(_SFN, KC_CAPS):
             // Immediately select the hold action when another key is pressed.
             return true;
         default:
