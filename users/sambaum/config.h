@@ -28,6 +28,12 @@
 #define TAPPING_FORCE_HOLD_PER_KEY
 
 /*
+ * Holding and releasing a dual-function key without pressing another key will result in nothing happening.
+ * With retro tapping enabled, releasing the key without pressing another will send the original keycode even if it is outside the tapping term.
+ */
+#define RETRO_TAPPING_PER_KEY
+
+/*
  * Required for ATEN macro and RDP
  * Sets the delay between register_code and unregister_code with a tap,
  * if you're having issues with it registering properly (common on VUSB boards).

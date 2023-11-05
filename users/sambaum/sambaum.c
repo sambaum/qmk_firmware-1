@@ -47,7 +47,16 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 }
-////////////// Hold On Other Key Press END //////////////
+////////////// Retro Tapping END //////////////
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_SFN, KC_CAPS):
+            return true;
+        default:
+            return false;
+    }
+}
+////////////// Retro Tapping BEGIN //////////////
 
 
 ///////////////////// Macros BEGIN /////////////////////
