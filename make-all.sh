@@ -21,3 +21,5 @@ make novelkeys/nk65:sambaum
 make chaos65:sambaum
 make mt/ncr80/hotswap:sambaum
 make owlab/link65/hotswap:sambaum
+
+cp .build/* /mnt/c/Users/samue/Dropbox/qmk-firmware
