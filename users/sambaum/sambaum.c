@@ -269,22 +269,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
-  case ATEN:
-    if (record->event.pressed) {
-      // when keycode is pressed
-      register_code(KC_SCRL);
-      wait_ms(30);
-      unregister_code(KC_SCRL);
-      register_code(KC_SCRL);
-      wait_ms(30);
-      unregister_code(KC_SCRL);
-      register_code(KC_ENT);
-      wait_ms(30);
-      unregister_code(KC_ENT);
-    } else {
-      // when keycode is released
-    }
-    break;
+  // case ATEN:
+  //   if (record->event.pressed) {
+  //     // when keycode is pressed
+  //     register_code(KC_SCRL);
+  //     wait_ms(30);
+  //     unregister_code(KC_SCRL);
+  //     register_code(KC_SCRL);
+  //     wait_ms(30);
+  //     unregister_code(KC_SCRL);
+  //     register_code(KC_ENT);
+  //     wait_ms(30);
+  //     unregister_code(KC_ENT);
+  //   } else {
+  //     // when keycode is released
+  //   }
+  //   break;
 
   // Alt-Tab for RDP
    case ALTPGUP:
@@ -294,6 +294,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
        wait_ms(30); //RDP
        register_code(KC_PGUP);
      } else {
+       wait_ms(30); //RDP
        unregister_code(KC_PGUP);
      }
      break;
@@ -306,6 +307,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
        wait_ms(30); //RDP
        register_code(KC_PGDN);
      } else {
+       wait_ms(30); //RDP
        unregister_code(KC_PGDN);
      }
      break;
